@@ -9,14 +9,20 @@
     {
         private static void Main(string[] args)
         {
-            var order = new Order();
+
+            var customer = new Customer
+                {
+                    IsPreferred = true
+                };
+
+            var order = Order.CreateOrder(customer);
 
 
             Console.WriteLine("The order created is an instance of type: {0}", order.GetType());
 
 
-            ShowMethodInfo(() => Order.CreateOrder());
-            ShowMethodInfo(() => new Order());
+            //ShowMethodInfo(() => Order.CreateOrder(customer));
+            //ShowMethodInfo(() => new Order(customer));
 
             Console.ReadKey();
         }
