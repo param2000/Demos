@@ -17,6 +17,8 @@
 
             var order = Order.CreateOrder(customer);
 
+            // the problem is this logic needs to be in one place, since we may have multiple
+            // areas where orders can be created. for example, a purchase order vs. an online order
 
             Console.WriteLine("The order created is an instance of type: {0}", order.GetType());
 
