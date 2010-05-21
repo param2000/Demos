@@ -43,13 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FactoryMethod\AbstractFactory\KoolAid.cs" />
-    <Compile Include="FactoryMethod\ContainerInjection\KoolAid.cs" />
-    <Compile Include="FactoryMethod\ExtractService\KoolAid.cs" />
-    <Compile Include="FactoryMethod\ExtractStaticToClass\KoolAid.cs" />
-    <Compile Include="FactoryMethod\InjectFactory\KoolAid.cs" />
-    <Compile Include="FactoryMethod\Original\KoolAid.cs" />
-    <Compile Include="FactoryMethod\EncapsulateObjectCreation\KoolAid.cs" />
+    <Compile Include="FactoryMethod\_5_AbstractFactory\KoolAid.cs" />
+    <Compile Include="FactoryMethod\_7_ContainerInjection\KoolAid.cs" />
+    <Compile Include="FactoryMethod\_6_ExtractService\KoolAid.cs" />
+    <Compile Include="FactoryMethod\_3_ExtractStaticToClass\KoolAid.cs" />
+    <Compile Include="FactoryMethod\_4_InjectFactory\KoolAid.cs" />
+    <Compile Include="FactoryMethod\_1_Original\KoolAid.cs" />
+    <Compile Include="FactoryMethod\_2_EncapsulateObjectCreation\KoolAid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\Singleton.cs" />
