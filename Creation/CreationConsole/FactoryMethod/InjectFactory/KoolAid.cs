@@ -1,4 +1,4 @@
-namespace CreationConsole.FactoryMethod.ExtractStaticToClass
+namespace CreationConsole.FactoryMethod.InjectFactory
 {
 	using System;
 
@@ -68,10 +68,16 @@ namespace CreationConsole.FactoryMethod.ExtractStaticToClass
 
 		public class BeverageStand
 		{
+			private readonly KoolAidFactory _factory;
+
+			public BeverageStand(KoolAidFactory factory)
+			{
+				_factory = factory;
+			}
+
 			public KoolAid OrderKoolAid(string flavor)
 			{
-				var factory = new KoolAidFactory();
-				KoolAid koolAid = factory.Create(flavor);
+				KoolAid koolAid = _factory.Create(flavor);
 
 				koolAid.Prepare();
 				koolAid.Sweeten();
@@ -82,10 +88,16 @@ namespace CreationConsole.FactoryMethod.ExtractStaticToClass
 
 		public class BeverageWebSite
 		{
+			private readonly KoolAidFactory _factory;
+
+			public BeverageWebSite(KoolAidFactory factory)
+			{
+				_factory = factory;
+			}
+
 			public KoolAid OrderKoolAid(string flavor)
 			{
-				var factory = new KoolAidFactory();
-				KoolAid koolAid = factory.Create(flavor);
+				KoolAid koolAid = _factory.Create(flavor);
 
 				koolAid.Prepare();
 				koolAid.Sweeten();
@@ -98,7 +110,8 @@ namespace CreationConsole.FactoryMethod.ExtractStaticToClass
 		{
 			public void Create_using_new()
 			{
-				var beverageStand = new BeverageStand();
+				var koolAidFactory = new KoolAidFactory();
+				var beverageStand = new BeverageStand(koolAidFactory);
 
 				KoolAid koolAid = beverageStand.OrderKoolAid("cherry");
 

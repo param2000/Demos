@@ -47,13 +47,13 @@
   <ItemGroup>
     <Compile Include="FactoryMethod\AbstractFactory\KoolAid.cs" />
     <Compile Include="FactoryMethod\ExtractStaticToClass\KoolAid.cs" />
+    <Compile Include="FactoryMethod\InjectFactory\KoolAid.cs" />
     <Compile Include="FactoryMethod\Original\KoolAid.cs" />
     <Compile Include="FactoryMethod\EncapsulateObjectCreation\KoolAid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Singleton\" />
+    <Compile Include="Singleton\Right.cs" />
+    <Compile Include="Singleton\Wrong.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
