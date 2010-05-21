@@ -37,6 +37,18 @@ namespace CreationConsole.Builder
 		}
 	}
 
+	public class SuperAdminUserBuilder :
+		UserBuilder
+	{
+		public override UserBuilder Level(UserLevel level)
+		{
+			if (level != UserLevel.Normal && level != UserLevel.Admin)
+				throw new InvalidOperationException("Not authorized to create administrator");
+
+			return base.Level(level);
+		}
+	}
+
 	public enum UserLevel
 	{
 		Normal,
@@ -64,6 +76,16 @@ namespace CreationConsole.Builder
 			User user = new AdminUserBuilder()
 				.Username("regular.joe")
 				.Level(UserLevel.Normal)
+				.Create();
+
+			Console.WriteLine("User " + user.Username + " created as " + user.Level);
+		}
+
+		public void Should_only_be_allowed_to_create_admin_users()
+		{
+			User user = new SuperAdminUserBuilder()
+				.Username("super.man")
+				.Level(UserLevel.Admin)
 				.Create();
 
 			Console.WriteLine("User " + user.Username + " created as " + user.Level);
