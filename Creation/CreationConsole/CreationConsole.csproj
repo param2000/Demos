@@ -52,6 +52,7 @@
     <Compile Include="FactoryMethod\EncapsulateObjectCreation\KoolAid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton\Singleton.cs" />
     <Compile Include="Singleton\Right.cs" />
     <Compile Include="Singleton\Wrong.cs" />
   </ItemGroup>

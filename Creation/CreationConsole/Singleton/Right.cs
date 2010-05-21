@@ -9,6 +9,7 @@ namespace CreationConsole.Singleton
 
 		protected Right()
 		{
+			Console.WriteLine("Constructing Right");
 		}
 
 		public static Right Instance
@@ -39,6 +40,10 @@ namespace CreationConsole.Singleton
 	{
 		public void Should_access_a_single_instance_of_the_class()
 		{
+			Console.WriteLine("Calling method");
+			Right.Instance.MyMethod();
+
+			Console.WriteLine("Calling method again");
 			Right.Instance.MyMethod();
 		}
 	}
