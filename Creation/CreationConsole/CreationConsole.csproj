@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\UserBuilder.cs" />
     <Compile Include="FactoryMethod\_5_AbstractFactory\KoolAid.cs" />
     <Compile Include="FactoryMethod\_7_ContainerInjection\KoolAid.cs" />
     <Compile Include="FactoryMethod\_6_ExtractService\KoolAid.cs" />
