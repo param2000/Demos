@@ -29,6 +29,11 @@ namespace CreationConsole.Singleton
 			}
 		}
 
+		public static void Use(T instance)
+		{
+			_instance = instance;
+		}
+
 		public void MyMethod()
 		{
 			Console.WriteLine("MyMethod is running");
@@ -51,6 +56,15 @@ namespace CreationConsole.Singleton
 		public void Should_use_the_generic_singleton()
 		{
 			Singleton<Subject>.Instance.Value = 27;
+
+			Console.WriteLine("Value = " + Singleton<Subject>.Instance.Value);
+		}
+
+		public void Should_use_my_prebuilt_instance()
+		{
+			Subject subject = new Subject();
+			subject.Value = 42;
+			Singleton<Subject>.Use(subject);
 
 			Console.WriteLine("Value = " + Singleton<Subject>.Instance.Value);
 		}

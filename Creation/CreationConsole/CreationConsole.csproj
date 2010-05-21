@@ -31,14 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
@@ -46,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FactoryMethod\AbstractFactory\KoolAid.cs" />
+    <Compile Include="FactoryMethod\ContainerInjection\KoolAid.cs" />
+    <Compile Include="FactoryMethod\ExtractService\KoolAid.cs" />
     <Compile Include="FactoryMethod\ExtractStaticToClass\KoolAid.cs" />
     <Compile Include="FactoryMethod\InjectFactory\KoolAid.cs" />
     <Compile Include="FactoryMethod\Original\KoolAid.cs" />
