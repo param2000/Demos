@@ -28,6 +28,24 @@ namespace CreationConsole.FactoryMethod.ExtractStaticToClass
 			Console.WriteLine("Adding 2 cups of sugar");
 		}
 	}
+	public class LemonLimeKoolAid :
+		KoolAid
+	{
+		public override string Color
+		{
+			get { return "yellow-ish"; }
+		}
+
+		public override void Prepare()
+		{
+			Console.WriteLine("Preparing lemon-lime kool aid");
+		}
+
+		public override void Sweeten()
+		{
+			Console.WriteLine("Adding 3 cups of sugar");
+		}
+	}
 
 	public class GrapeKoolAid :
 		KoolAid
@@ -59,6 +77,9 @@ namespace CreationConsole.FactoryMethod.ExtractStaticToClass
 
 				case "grape":
 					return new GrapeKoolAid();
+
+				case "lemon-lime":
+					return new LemonLimeKoolAid();
 
 				default:
 					Console.WriteLine("Unknown flavor: " + flavor);
@@ -100,7 +121,7 @@ namespace CreationConsole.FactoryMethod.ExtractStaticToClass
 			{
 				var beverageStand = new BeverageStand();
 
-				KoolAid koolAid = beverageStand.OrderKoolAid("cherry");
+				KoolAid koolAid = beverageStand.OrderKoolAid("lemon-lime");
 
 				Console.WriteLine("Color: {0}", koolAid.Color);
 			}

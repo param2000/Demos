@@ -34,7 +34,7 @@ namespace CreationConsole.FactoryMethod.Original
 	{
 		public override string Color
 		{
-			get { return "red"; }
+			get { return "purple"; }
 		}
 
 		public override void Prepare()

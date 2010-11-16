@@ -29,6 +29,27 @@ namespace CreationConsole.Singleton
 			}
 		}
 
+		private static Func<DateTime> _now = () => DateTime.Now;
+
+		public DateTime Now
+		{
+			get
+			{
+				return _now();
+			}
+		}
+
+		public void ReplaceDateTimeWith(Func<DateTime> nower)
+		{
+			_now = nower;
+		}
+
+		public void SetInstance(Right right)
+		{
+			lock(_lock)
+				_instance = right;
+		}
+
 		public void MyMethod()
 		{
 			Console.WriteLine("MyMethod is running");
@@ -45,6 +66,12 @@ namespace CreationConsole.Singleton
 
 			Console.WriteLine("Calling method again");
 			Right.Instance.MyMethod();
+
+			Console.WriteLine("The time is : " + Right.Instance.Now);
+
+			Right.Instance.ReplaceDateTimeWith(() => new DateTime(2010,03,01));
+
+			Console.WriteLine("The time is now: " + Right.Instance.Now);
 		}
 	}
 }

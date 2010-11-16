@@ -40,10 +40,10 @@ namespace CreationConsole.Singleton
 			Console.WriteLine("Connection String: " + connection.ConnectionString);
 
 			// eject the singleton and try again
-//			container.EjectAllInstancesOf<ConfigurationValues>();
-//
-//			connection = container.GetInstance<Connection>();
-//			Console.WriteLine("Connection String: " + connection.ConnectionString);
+			container.EjectAllInstancesOf<ConfigurationValues>();
+
+			connection = container.GetInstance<Connection>();
+			Console.WriteLine("Connection String: " + connection.ConnectionString);
 		}
 	}
 }

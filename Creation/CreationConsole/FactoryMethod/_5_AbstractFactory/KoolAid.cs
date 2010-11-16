@@ -67,15 +67,15 @@ namespace CreationConsole.FactoryMethod.AbstractFactory
 		}
 	}
 
-	public abstract class KoolAidFactory
+	public interface KoolAidFactory
 	{
-		public abstract KoolAid Create(string flavor);
+		KoolAid Create(string flavor);
 	}
 
 	public class SweetenedKoolAidFactory :
 		KoolAidFactory
 	{
-		public override KoolAid Create(string flavor)
+		public KoolAid Create(string flavor)
 		{
 			switch (flavor)
 			{
@@ -95,7 +95,7 @@ namespace CreationConsole.FactoryMethod.AbstractFactory
 	public class SugarFreeKoolAidFactory :
 		KoolAidFactory
 	{
-		public override KoolAid Create(string flavor)
+		public KoolAid Create(string flavor)
 		{
 			switch (flavor)
 			{
@@ -153,7 +153,7 @@ namespace CreationConsole.FactoryMethod.AbstractFactory
 	{
 		public void Create_using_new()
 		{
-			var koolAidFactory = new SugarFreeKoolAidFactory();
+			var koolAidFactory = new SweetenedKoolAidFactory();
 			var beverageStand = new BeverageStand(koolAidFactory);
 
 			KoolAid koolAid = beverageStand.OrderKoolAid("cherry");

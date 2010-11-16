@@ -171,19 +171,22 @@ namespace CreationConsole.FactoryMethod.ContainerInjection
 	{
 		public void Create_using_new()
 		{
-			IContainer container = new Container(c =>
-				{
-					c.For<KoolAidFactory>()
-						.Use<SweetenedKoolAidFactory>();
-					c.For<KoolAidMaker>()
-						.Use<LowCostKoolAidMaker>();
-				});
+			IContainer container = new Container(ConfigureContainer);
 
 			var beverageStand = container.GetInstance<BeverageStand>();
 
 			KoolAid koolAid = beverageStand.OrderKoolAid("cherry");
 
 			Console.WriteLine("Color: {0}", koolAid.Color);
+		}
+
+		private void ConfigureContainer(ConfigurationExpression c)
+		{
+			c.For<KoolAidFactory>()
+				.Use<SugarFreeKoolAidFactory>();
+
+			c.For<KoolAidMaker>()
+				.Use<LowCostKoolAidMaker>();
 		}
 	}
 }

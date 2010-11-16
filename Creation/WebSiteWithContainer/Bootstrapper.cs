@@ -9,6 +9,10 @@ namespace WebSiteWithContainer
 		{
 			ObjectFactory.Initialize(x =>
 				{
+					x.Scan(y =>
+						{
+							y.
+						});
 					x.For<ISqlConnectionFactory>()
 						.Singleton()
 						.Use<SqlConnectionFactory>();
