@@ -44,6 +44,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="NotNull_Specs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property_Specs.cs" />
     <Compile Include="Validation_Tests.cs" />
   </ItemGroup>
   <ItemGroup>

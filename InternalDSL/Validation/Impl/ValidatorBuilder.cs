@@ -1,4 +1,4 @@
-﻿namespace Validation
+﻿namespace Validation.Impl
 {
 	public interface ValidatorBuilder
 	{

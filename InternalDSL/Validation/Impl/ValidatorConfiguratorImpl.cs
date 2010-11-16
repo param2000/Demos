@@ -1,4 +1,4 @@
-﻿namespace Validation
+﻿namespace Validation.Impl
 {
 	using System.Collections.Generic;
 
@@ -28,7 +28,7 @@
 				configurator.Configure(builder);
 			}
 
-			return builder.Build();
+			return builder.Build(typeof(T).Name);
 		}
 
 		void ValidateConfigurators()

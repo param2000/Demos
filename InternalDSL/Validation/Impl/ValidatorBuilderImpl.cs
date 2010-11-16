@@ -1,4 +1,4 @@
-﻿namespace Validation
+﻿namespace Validation.Impl
 {
 	using System.Collections.Generic;
 
@@ -17,9 +17,9 @@
 			_validators.Add(validator);
 		}
 
-		public Validator<T> Build()
+		public Validator<T> Build(string name)
 		{
-			return new ValidatorImpl<T>(_validators);
+			return new ValidatorImpl<T>(name, _validators);
 		}
 	}
 }

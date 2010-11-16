@@ -1,5 +1,7 @@
 ﻿namespace Validation.Conditions
 {
+	using Impl;
+
 	internal class NotNullConfigurator<T> :
 		Configurator<T>
 		where T : class

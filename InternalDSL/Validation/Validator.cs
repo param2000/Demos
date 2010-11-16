@@ -1,6 +1,8 @@
 namespace Validation
 {
 	using System;
+	using System.Collections.Generic;
+	using Impl;
 
 	public static class Validator
 	{
@@ -17,6 +19,6 @@ namespace Validation
 
 	public interface Validator<T>
 	{
-		void Validate(T value);
+		IEnumerable<Violation> Validate(T value);
 	}
 }

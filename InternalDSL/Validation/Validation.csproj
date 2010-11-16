@@ -40,18 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conditions\NotEmptyConfigurator.cs" />
+    <Compile Include="Conditions\NotEmptyExtension.cs" />
+    <Compile Include="Conditions\NotEmptyValidator.cs" />
     <Compile Include="Conditions\NotNullConfigurator.cs" />
     <Compile Include="Conditions\NotNullExtension.cs" />
-    <Compile Include="Configurator.cs" />
+    <Compile Include="Conditions\PropertyConfigurator.cs" />
+    <Compile Include="Conditions\PropertyConfiguratorImpl.cs" />
+    <Compile Include="Conditions\PropertyExtension.cs" />
+    <Compile Include="Conditions\PropertyValidator.cs" />
+    <Compile Include="Impl\ViolationImpl.cs" />
+    <Compile Include="Impl\Configurator.cs" />
     <Compile Include="Conditions\NotNullValidator.cs" />
     <Compile Include="ValidationException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validator.cs" />
-    <Compile Include="ValidatorBuilder.cs" />
-    <Compile Include="ValidatorBuilderImpl.cs" />
-    <Compile Include="ValidatorConfigurator.cs" />
-    <Compile Include="ValidatorConfiguratorImpl.cs" />
-    <Compile Include="ValidatorImpl.cs" />
+    <Compile Include="Impl\ValidatorBuilder.cs" />
+    <Compile Include="Impl\ValidatorBuilderImpl.cs" />
+    <Compile Include="Impl\ValidatorConfigurator.cs" />
+    <Compile Include="Impl\ValidatorConfiguratorImpl.cs" />
+    <Compile Include="Impl\ValidatorImpl.cs" />
+    <Compile Include="Violation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Advanced\" />

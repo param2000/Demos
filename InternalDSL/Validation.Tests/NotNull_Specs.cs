@@ -1,5 +1,7 @@
 ﻿namespace Validation.Tests
 {
+	using System.Collections.Generic;
+	using System.Linq;
 	using Model;
 	using NUnit.Framework;
 
@@ -23,7 +25,9 @@
 		{
 			Order order = null;
 
-			Assert.Throws<ValidationException>(() => _validator.Validate(order));
+			List<Violation> violations = _validator.Validate(order).ToList();
+
+			Assert.AreEqual(1, violations.Count);
 		}
 	}
 }

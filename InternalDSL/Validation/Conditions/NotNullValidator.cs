@@ -1,17 +1,16 @@
 namespace Validation.Conditions
 {
+	using System.Collections.Generic;
+	using Impl;
+
 	public class NotNullValidator<T> :
 		Validator<T>
 		where T : class
 	{
-		public void Validate(T value)
+		public IEnumerable<Violation> Validate(T value)
 		{
 			if (value == null)
-				throw new ValidationException("The value cannot be null.");
+				yield return new ViolationImpl<T>("cannot be null");
 		}
 	}
-}
-
-namespace Validation
-{
 }
