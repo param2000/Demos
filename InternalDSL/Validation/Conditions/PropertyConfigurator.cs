@@ -2,7 +2,7 @@
 {
 	using Impl;
 
-	public interface PropertyConfigurator<T, TProperty> :
+	public interface PropertyConfigurator<out T, out TProperty> :
 		ValidatorConfigurator<TProperty>
 	{
 	}

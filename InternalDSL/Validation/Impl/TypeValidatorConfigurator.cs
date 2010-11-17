@@ -2,12 +2,12 @@
 {
 	using System.Collections.Generic;
 
-	internal class ValidatorConfiguratorImpl<T> :
+	internal class TypeValidatorConfigurator<T> :
 		ValidatorConfigurator<T>
 	{
 		readonly IList<Configurator<T>> _configurators;
 
-		public ValidatorConfiguratorImpl()
+		public TypeValidatorConfigurator()
 		{
 			_configurators = new List<Configurator<T>>();
 		}
@@ -21,7 +21,7 @@
 		{
 			ValidateConfigurators();
 
-			var builder = new ValidatorBuilderImpl<T>();
+			var builder = new TypeValidatorBuilder<T>();
 
 			foreach (var configurator in _configurators)
 			{

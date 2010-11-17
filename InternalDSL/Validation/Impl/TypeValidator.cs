@@ -3,13 +3,13 @@
 	using System.Collections.Generic;
 	using System.Linq;
 
-	internal class ValidatorImpl<T> :
+	internal class TypeValidator<T> :
 		Validator<T>
 	{
 		readonly string _name;
 		readonly IList<Validator<T>> _validators;
 
-		public ValidatorImpl(string name, IEnumerable<Validator<T>> validators)
+		public TypeValidator(string name, IEnumerable<Validator<T>> validators)
 		{
 			_name = name;
 			_validators = validators.ToList();

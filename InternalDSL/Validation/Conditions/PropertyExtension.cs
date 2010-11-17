@@ -11,7 +11,7 @@
 		                                                                        Expression<Func<T, TProperty>> propertyExpression)
 			where T : class
 		{
-			var propertyConfigurator = new PropertyConfiguratorImpl<T, TProperty>(propertyExpression);
+			var propertyConfigurator = new ObjectPropertyConfigurator<T, TProperty>(propertyExpression);
 
 			configurator.AddConfigurator(propertyConfigurator);
 

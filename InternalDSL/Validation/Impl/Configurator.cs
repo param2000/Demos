@@ -5,7 +5,7 @@
 		void ValidateConfiguration();
 	}
 
-	public interface Configurator<T> :
+	public interface Configurator<in T> :
 		Configurator
 	{
 		void Configure(ValidatorBuilder<T> builder);

@@ -8,7 +8,7 @@ namespace Validation
 	{
 		public static Validator<T> New<T>(Action<ValidatorConfigurator<T>> configure)
 		{
-			var configurator = new ValidatorConfiguratorImpl<T>();
+			var configurator = new TypeValidatorConfigurator<T>();
 
 			configure(configurator);
 
@@ -17,7 +17,7 @@ namespace Validation
 	}
 
 
-	public interface Validator<T>
+	public interface Validator<in T>
 	{
 		IEnumerable<Violation> Validate(T value);
 	}

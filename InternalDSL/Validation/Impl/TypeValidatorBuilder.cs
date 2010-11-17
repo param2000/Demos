@@ -2,12 +2,12 @@
 {
 	using System.Collections.Generic;
 
-	internal class ValidatorBuilderImpl<T> :
+	internal class TypeValidatorBuilder<T> :
 		ValidatorBuilder<T>
 	{
 		IList<Validator<T>> _validators;
 
-		public ValidatorBuilderImpl()
+		public TypeValidatorBuilder()
 		{
 			_validators = new List<Validator<T>>();
 		}
@@ -19,7 +19,7 @@
 
 		public Validator<T> Build(string name)
 		{
-			return new ValidatorImpl<T>(name, _validators);
+			return new TypeValidator<T>(name, _validators);
 		}
 	}
 }

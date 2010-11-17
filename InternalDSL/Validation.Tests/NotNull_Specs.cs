@@ -30,4 +30,50 @@
 			Assert.AreEqual(1, violations.Count);
 		}
 	}
+
+	[TestFixture]
+	public class NotEmpty_Tests
+	{
+		Validator<Order> _validator;
+
+		[TestFixtureSetUp]
+		public void Using_a_not_empty_and_not_null_validator_on_a_string_property()
+		{
+			_validator = Validator.New<Order>(x =>
+				{
+					x.Property(y => y.OrderId)
+						.NotEmpty()
+						.NotNull();
+				});
+		}
+
+		[Test]
+		public void Should_support_not_null()
+		{
+			var order = new Order {OrderId = null};
+
+			List<Violation> violations = _validator.Validate(order).ToList();
+			Assert.AreEqual(1, violations.Count);
+			Assert.AreEqual("cannot be null", violations[0].Message);
+		}
+
+		[Test]
+		public void Should_support_not_empty()
+		{
+			var order = new Order {OrderId = ""};
+
+			List<Violation> violations = _validator.Validate(order).ToList();
+			Assert.AreEqual(1, violations.Count);
+			Assert.AreEqual("cannot be empty", violations[0].Message);
+		}
+
+		[Test]
+		public void Should_not_violate_a_valid_string()
+		{
+			var order = new Order {OrderId = "a"};
+
+			List<Violation> violations = _validator.Validate(order).ToList();
+			Assert.AreEqual(0, violations.Count);
+		}
+	}
 }

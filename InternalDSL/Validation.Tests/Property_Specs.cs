@@ -15,7 +15,7 @@
 		{
 			_validator = Validator.New<Order>(x =>
 				{
-					x.Property(y => y.CustomerId)
+					x.Property(y => y.OrderId)
 						.NotNull()
 						.NotEmpty();
 				});
@@ -30,8 +30,8 @@
 
 			Assert.AreEqual(1, violations.Count);
 			Assert.AreEqual("cannot be null", violations[0].Message);
-			Assert.AreEqual("Order.CustomerId", violations[0].Key);
-			Assert.AreEqual("Order.CustomerId cannot be null", violations[0].ToString());
+			Assert.AreEqual("Order.OrderId", violations[0].Key);
+			Assert.AreEqual("Order.OrderId cannot be null", violations[0].ToString());
 		}
 	}
 
@@ -45,7 +45,7 @@
 		{
 			_validator = Validator.New<Order>(x =>
 				{
-					x.Property(y => y.CustomerId)
+					x.Property(y => y.OrderId)
 						.NotNull()
 						.NotEmpty();
 				});
@@ -55,14 +55,14 @@
 		public void Should_match_the_empty_string_value()
 		{
 			Order order = new Order();
-			order.CustomerId = "";
+			order.OrderId = "";
 
 			List<Violation> violations = _validator.Validate(order).ToList();
 
 			Assert.AreEqual(1, violations.Count);
 			Assert.AreEqual("cannot be empty", violations[0].Message);
-			Assert.AreEqual("Order.CustomerId", violations[0].Key);
-			Assert.AreEqual("Order.CustomerId cannot be empty", violations[0].ToString());
+			Assert.AreEqual("Order.OrderId", violations[0].Key);
+			Assert.AreEqual("Order.OrderId cannot be empty", violations[0].ToString());
 		}
 	}
 }

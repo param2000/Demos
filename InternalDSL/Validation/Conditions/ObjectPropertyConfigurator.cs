@@ -6,7 +6,7 @@
 	using System.Reflection;
 	using Impl;
 
-	public class PropertyConfiguratorImpl<T, TProperty> :
+	public class ObjectPropertyConfigurator<T, TProperty> :
 		PropertyConfigurator<T, TProperty>,
 		Configurator<T>
 		where T : class
@@ -14,7 +14,7 @@
 		readonly Expression<Func<T, TProperty>> _propertyExpression;
 		IList<Configurator<TProperty>> _configurators;
 
-		public PropertyConfiguratorImpl(Expression<Func<T, TProperty>> propertyExpression)
+		public ObjectPropertyConfigurator(Expression<Func<T, TProperty>> propertyExpression)
 		{
 			_propertyExpression = propertyExpression;
 
@@ -23,26 +23,19 @@
 
 		public void Configure(ValidatorBuilder<T> builder)
 		{
-			var propertyValidatorBuilder= new ValidatorBuilderImpl<TProperty>();
+			var propertyValidatorBuilder = new TypeValidatorBuilder<TProperty>();
 			foreach (var configurator in _configurators)
 			{
 				configurator.Configure(propertyValidatorBuilder);
 			}
 
-			var propertyValueValidator = propertyValidatorBuilder.Build("." + GetPropertyName(_propertyExpression));
+			Validator<TProperty> propertyValueValidator = propertyValidatorBuilder.Build("." + GetPropertyName(_propertyExpression));
 
 			var validator = new PropertyValidator<T, TProperty>(_propertyExpression, propertyValueValidator);
 
 			builder.AddValidator(validator);
 		}
 
-		static string GetPropertyName(Expression<Func<T, TProperty>> propertyExpression)
-		{
-			Expression expression = propertyExpression.Body;
-			var me = expression as MemberExpression;
-
-			return me.Member.Name;
-		}
 		public void ValidateConfiguration()
 		{
 			Expression expression = _propertyExpression.Body;
@@ -59,6 +52,14 @@
 		public void AddConfigurator(Configurator<TProperty> configurator)
 		{
 			_configurators.Add(configurator);
+		}
+
+		static string GetPropertyName(Expression<Func<T, TProperty>> propertyExpression)
+		{
+			Expression expression = propertyExpression.Body;
+			var me = expression as MemberExpression;
+
+			return me.Member.Name;
 		}
 	}
 }

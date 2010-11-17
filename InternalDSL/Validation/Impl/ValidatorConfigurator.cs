@@ -1,6 +1,6 @@
 ﻿namespace Validation.Impl
 {
-	public interface ValidatorConfigurator<T>
+	public interface ValidatorConfigurator<out T>
 	{
 		void AddConfigurator(Configurator<T> configurator);
 	}
