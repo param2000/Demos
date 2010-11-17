@@ -40,22 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advanced\MatchesConfigurator.cs" />
+    <Compile Include="Advanced\MatchesExtension.cs" />
     <Compile Include="Conditions\EnumerableConfigurator.cs" />
     <Compile Include="Conditions\EnumerableValidator.cs" />
+    <Compile Include="Conditions\MatchesConfiguratorImpl.cs" />
+    <Compile Include="Conditions\MatchesValidator.cs" />
     <Compile Include="Conditions\NestedConfigurator.cs" />
     <Compile Include="Conditions\NestedValidator.cs" />
     <Compile Include="Conditions\NotEmptyCollectionConfigurator.cs" />
     <Compile Include="Conditions\NotEmptyListValidator.cs" />
     <Compile Include="Conditions\NotEmptyConfigurator.cs" />
-    <Compile Include="Conditions\NotEmptyExtension.cs" />
+    <Compile Include="NotEmptyExtension.cs" />
     <Compile Include="Conditions\NotEmptyValidator.cs" />
     <Compile Include="Conditions\NotNullConfigurator.cs" />
-    <Compile Include="Conditions\NotNullExtension.cs" />
+    <Compile Include="NotNullExtension.cs" />
     <Compile Include="Conditions\PropertyConfigurator.cs" />
     <Compile Include="Conditions\ObjectPropertyConfigurator.cs" />
-    <Compile Include="Conditions\PropertyExtension.cs" />
+    <Compile Include="PropertyExtension.cs" />
     <Compile Include="Conditions\PropertyValidator.cs" />
-    <Compile Include="Conditions\ValidateWithExtension.cs" />
+    <Compile Include="ValidateWithExtension.cs" />
     <Compile Include="Impl\ViolationImpl.cs" />
     <Compile Include="Impl\Configurator.cs" />
     <Compile Include="Conditions\NotNullValidator.cs" />
@@ -71,9 +75,7 @@
     <Compile Include="Violation.cs" />
     <Compile Include="ViolationException.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Advanced\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

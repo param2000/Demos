@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Collection_Tests.cs" />
     <Compile Include="Exception_Tests.cs" />
+    <Compile Include="Matches_Tests.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderItem.cs" />
