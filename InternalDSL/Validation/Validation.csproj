@@ -42,6 +42,10 @@
   <ItemGroup>
     <Compile Include="Advanced\MatchesConfigurator.cs" />
     <Compile Include="Advanced\MatchesExtension.cs" />
+    <Compile Include="Conditions\ContainsStringValidatorConfigurator.cs" />
+    <Compile Include="Conditions\DateTimeValidatorConfigurator.cs" />
+    <Compile Include="Conditions\DateTimeValidatorConfiguratorImpl.cs" />
+    <Compile Include="Conditions\EndsWithStringValidatorConfigurator.cs" />
     <Compile Include="Conditions\EnumerableConfigurator.cs" />
     <Compile Include="Conditions\EnumerableValidator.cs" />
     <Compile Include="Conditions\MatchesConfiguratorImpl.cs" />
@@ -51,6 +55,14 @@
     <Compile Include="Conditions\NotEmptyCollectionConfigurator.cs" />
     <Compile Include="Conditions\NotEmptyListValidator.cs" />
     <Compile Include="Conditions\NotEmptyConfigurator.cs" />
+    <Compile Include="Conditions\StartsWithStringValidatorConfigurator.cs" />
+    <Compile Include="Conditions\StringValidator.cs" />
+    <Compile Include="Conditions\StringValidatorConfigurator.cs" />
+    <Compile Include="Conditions\StringValidatorConfiguratorImpl.cs" />
+    <Compile Include="Conditions\WithinPastDateTimeValidator.cs" />
+    <Compile Include="Conditions\WithinPastDateTimeValidatorConfigurator.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="DateTimeValidatorExtensions.cs" />
     <Compile Include="NotEmptyExtension.cs" />
     <Compile Include="Conditions\NotEmptyValidator.cs" />
     <Compile Include="Conditions\NotNullConfigurator.cs" />
@@ -59,6 +71,7 @@
     <Compile Include="Conditions\ObjectPropertyConfigurator.cs" />
     <Compile Include="PropertyExtension.cs" />
     <Compile Include="Conditions\PropertyValidator.cs" />
+    <Compile Include="StringValidatorExtensions.cs" />
     <Compile Include="ValidateWithExtension.cs" />
     <Compile Include="Impl\ViolationImpl.cs" />
     <Compile Include="Impl\Configurator.cs" />

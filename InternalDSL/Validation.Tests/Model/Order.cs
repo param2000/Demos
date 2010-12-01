@@ -1,5 +1,6 @@
 namespace Validation.Tests.Model
 {
+	using System;
 	using System.Collections.Generic;
 
 	public class Order
@@ -9,5 +10,7 @@ namespace Validation.Tests.Model
 		public Customer Customer { get; set; }
 
 		public IList<OrderItem> Items { get; set; }
+
+		public DateTime OrderDate { get; set; }
 	}
 }

@@ -4,6 +4,7 @@
 	using System.Linq;
 	using Model;
 	using NUnit.Framework;
+	using Validation.Advanced;
 
 	[TestFixture]
 	public class NestedValidator_Tests

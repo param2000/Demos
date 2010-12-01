@@ -1,5 +1,6 @@
 ﻿namespace Validation.Conditions
 {
+	using System;
 	using Impl;
 
 	internal class NotEmptyConfigurator :

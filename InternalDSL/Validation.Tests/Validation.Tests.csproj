@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collection_Tests.cs" />
+    <Compile Include="DateTime_Specs.cs" />
+    <Compile Include="Examples\DateTime_Specs.cs" />
+    <Compile Include="Examples\MethodChaining.cs" />
+    <Compile Include="Examples\MethodChain_AreWeDone.cs" />
     <Compile Include="Exception_Tests.cs" />
     <Compile Include="Matches_Tests.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -51,6 +55,7 @@
     <Compile Include="NotNull_Specs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property_Specs.cs" />
+    <Compile Include="String_Tests.cs" />
     <Compile Include="Validation_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
